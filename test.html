@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+<script src ="public/javascripts/jquery-latest.min.js" type="text/javascript" ></script>
+<script>
+$(document).ready(function(e) {
+    $("#test").click(function(e) {
+		
+    $.ajax({
+    dataType: 'json',
+    data: "sds",
+    type: 'OTHER',
+    url: "http://localhost:3000/test/userlist",
+    success: function(data, textStatus, jqXHR)
+				{
+					alert(textStatus);
+					var obj = jQuery.parseJSON(data);
+					alert(obj);
+					
+				},
+	error: function(data, textStatus, jqXHR)
+				{
+					alert(data);
+					
+				}
+
+});
+});
+});
+
+</script>
+</head>
+<body>
+<button id="test">cleck me</button>
+</body>
+</html>
